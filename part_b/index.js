@@ -40,6 +40,10 @@ app.get('/', (req, res) => {
   res.send(message);
 });
 
+// ************************************************
+// <!-- Section 4 : TODOs Enpoint Implementation-->
+// ************************************************
+
 // GET Endpoint Implementation
 // <!-- Endpoint 2 :   -->
 app.get('', function (req, res) {
