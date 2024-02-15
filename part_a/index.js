@@ -83,10 +83,10 @@ app.post('/add_user', function (req, res) {
   const query =
     'insert into userinfo (name, username, email, city) values ($1, $2, $3, $4)  returning * ;';
   db.any(query, [
-    req.query.name,
-    req.query.username,
-    req.query.email,
-    req.query.city,
+    req.body.name,
+    req.body.username,
+    req.body.email,
+    req.body.city,
   ])
     // if query execution succeeds
     // send success message
@@ -110,7 +110,7 @@ app.put('/update_user', function (req, res) {
   const query =
     'update userinfo set name = $1 where username = $2 returning * ;';
   // $1 and $2 will be replaced by req.body.name, req.body.username
-  db.any(query, [req.query.name, req.query.username])
+  db.any(query, [req.body.name, req.body.username])
     // if query execution succeeds
     // send success message
     .then(function (data) {
