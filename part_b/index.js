@@ -28,40 +28,38 @@ const dbConfig = {
 // Connect to database using the above details
 const db = pgp(dbConfig);
 
-
 // ************************************************
-// <!-- Section 3 : All Endpoint Implementations -->
+// <!-- Section 3 : TODOs Enpoint Implementation-->
 // ************************************************
 
-// GET Endpoint Implementation (Default)
-// <!-- Endpoint 1 :  Default endpoint ("/") -->
+// <!-- Endpoint 1 :  GET Endpoint Implementation (Default) -->
 const message = 'Hey there!';
 app.get('/', (req, res) => {
   res.send(message);
 });
 
-// ************************************************
-// <!-- Section 4 : TODOs Enpoint Implementation-->
-// ************************************************
-
-// GET Endpoint Implementation
-// <!-- Endpoint 2 :   -->
-app.get('', function (req, res) {
+// <!-- Endpoint 2 : GET Endpoint Implementation -->
+app.get('getTop3Trails', function (req, res) {
 });
 
-// POST Endpoint Implementation
-// <!-- Endpoint 3  -->
-app.post('', function (req, res) {
+// <!-- Endpoint 3 : POST Endpoint Implementation -->
+app.post('addReview', function (req, res) {
 });
 
-// PUT Endpoint Implementation
-// <!-- Endpoint 4  -->
-app.put('', function (req, res) {
+// <!-- Endpoint 4 : PUT Endpoint Implementation -->
+app.put('updateReview', function (req, res) {
 });
 
-// DELETE Endpoint Implementation
-// <!-- Endpoint 5  -->
-app.delete('', function (req, res) {
+// <!-- Endpoint 5 : DELETE Endpoint Implementation -->
+app.delete('deleteReview', function (req, res) {
+});
+
+// <!-- Endpoint 6 : GET Endpoint Implementation -->
+app.get('getTrails', function (req, res) {
+});
+
+// <!-- Endpoint 7 : GET Endpoint Implementation -->
+app.get('getReviewsByTrailID', function (req, res) {
 });
 
 // ************************************************
