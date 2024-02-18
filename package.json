@@ -11,7 +11,7 @@
     "scripts": {
         "prestart": "npm install",
         "start": "nodemon ./part_a/index.js",
-        "start-server-part-a": "nodemon ./part_a/index.js",
-        "start-server-part-b": "nodemon ./part_b/index.js"
+        "start-server-part-b-1": "nodemon ./part_b_postman/index.js",
+        "start-server-part-b-2": "nodemon ./part_b_endpoints/index.js"
     }
 }
