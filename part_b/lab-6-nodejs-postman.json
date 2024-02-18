@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "e783fc96-e1ef-4451-8901-1ae31f2eeb4f",
-		"name": "lab7_nodejs",
+		"name": "lab6_nodejs",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -31,7 +31,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"test2\",\n    \"review\":\"The image looks good\",\n    \"rating\":9,\n    \"image_url\":\"https://sunsets.com\",\n    \"image_caption\":\"Sunset\",\n    \"image_id\":16,\n    \"review_id\":30\n}",
+					"raw": "{\n    \"username\":\"test2\",\n    \"review\":\"The image looks good\",\n    \"rating\":9,\n    \"image_url\":\"https://sunsets.com\",\n    \"image_caption\":\"Sunset\"\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -59,7 +59,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n    \"username\":\"test\",\n    \"review\":\"this is good\",\n    \"rating\":10,\n    \"review_id\":32\n}",
+					"raw": "{\n    \"username\":\"test\",\n    \"review\":\"this is good\",\n    \"rating\":10\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -168,19 +168,19 @@
 			"response": []
 		},
 		{
-			"name": "getReviewsByID",
+			"name": "getReviewsByTrailID",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/getReviewsByID?trail_id=9",
+					"raw": "http://localhost:3000/getReviewsByTrailID?trail_id=9",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "3000",
 					"path": [
-						"getReviewsByID"
+						"getReviewsByTrailID"
 					],
 					"query": [
 						{
