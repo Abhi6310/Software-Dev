@@ -39,27 +39,27 @@ app.get('/', (req, res) => {
 });
 
 // <!-- Endpoint 2 : GET Endpoint Implementation -->
-app.get('getTop3Trails', function (req, res) {
+app.get('/getTop3Trails', function (req, res) {
 });
 
 // <!-- Endpoint 3 : POST Endpoint Implementation -->
-app.post('addReview', function (req, res) {
+app.post('/addReview', function (req, res) {
 });
 
 // <!-- Endpoint 4 : PUT Endpoint Implementation -->
-app.put('updateReview', function (req, res) {
+app.put('/updateReview', function (req, res) {
 });
 
 // <!-- Endpoint 5 : DELETE Endpoint Implementation -->
-app.delete('deleteReview', function (req, res) {
+app.delete('/deleteReview', function (req, res) {
 });
 
 // <!-- Endpoint 6 : GET Endpoint Implementation -->
-app.get('getTrails', function (req, res) {
+app.get('/getTrails', function (req, res) {
 });
 
 // <!-- Endpoint 7 : GET Endpoint Implementation -->
-app.get('getReviewsByTrailID', function (req, res) {
+app.get('/getReviewsByTrailID', function (req, res) {
 });
 
 // ************************************************
