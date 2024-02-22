@@ -14,13 +14,6 @@ name: Sync changes from template
 
 on:
   # Run at 0517 UTC each Friday
-  schedule:
-    - cron: "17 5 * * 5"
-
-  # Run when this file changes
-  push:
-    paths:
-      - .github/workflows/sync-from-template.yml
 
   # Run when manually triggered
   workflow_dispatch:
@@ -30,14 +23,14 @@ env:
   HEAD_BRANCH: chore/sync-from-template
   GIT_AUTHOR_NAME: ${{ github.repository_owner }}
   GIT_AUTHOR_EMAIL: ${{ github.repository_owner }}@users.noreply.github.com
-  REPO_TEMPLATE: solvaholic/template
+  REPO_TEMPLATE: CU-CSCI3308-Spring2024/lab-6-nodejs
   THIS_REPO: ${{ github.repository }}
 
 jobs:
   sync-from-template:
     # Do not run on the template repository itself
-    if: github.repository != 'solvaholic/template'
-    name: Sync changes from solvaholic/template
+    if: github.repository != 'CU-CSCI3308-Spring2024/lab-6-nodejs'
+    name: Sync changes from CU-CSCI3308-Spring2024/lab-6-nodejs
     runs-on: ubuntu-latest
     continue-on-error: true
 
