@@ -9,23 +9,24 @@
 # [5] Env Vars   | https://docs.docker.com/compose/environment-variables/
 # [6] Secrets    | https://docs.docker.com/engine/swarm/secrets/#use-secrets-in-compose
 # ------------------------------------------------------------------------------
-version: '3.9'
+
 services:
   web:
-    image:
-    working_dir:
+    image: node:lts
+    working_dir: /repository
     depends_on:
-      -
+      - db
     ports:
-      -
+      - '3000:4000'
     volumes:
-      -
-    command:
+      - ./:/repository
+    command:  'npm start'
   db:
-    image:
-    env_file:
+    image: postgres:14
+    env_file: .env
     expose:
-      -
+      - '5432'
     volumes:
-      -
+      -  lab-01-db:/var/lib/postgresql/data
 volumes:
+  lab-01-db:
