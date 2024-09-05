@@ -1,0 +1,8 @@
+version: '3.9'
+services:
+  devel:
+    image: ubuntu:20.04
+    working_dir: /repository
+    volumes:
+      - './:/repository'
+    command: bash
