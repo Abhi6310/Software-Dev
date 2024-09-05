@@ -1,0 +1,24 @@
+Terminal Output of Merge conflict
+---------------------------------------
+
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % git checkout "<Person1Branch>"
+Switched to branch '<Person1Branch>'
+Your branch is up to date with 'origin/<Person1Branch>'.
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % git merge main
+Auto-merging main.cpp
+CONFLICT (content): Merge conflict in main.cpp
+Automatic merge failed; fix conflicts and then commit the result.
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % git add main.cpp
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % git commit -m "Merging changes with return value 2"
+[<Person1Branch> 7e75beb] Merging changes with return value 2
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % git push
+Enumerating objects: 7, done.
+Counting objects: 100% (7/7), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 367 bytes | 367.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To github.com:CU-CSCI3308-Fall2024/lab-2-git-shell-regex-Abhi6310.git
+   7eda5f6..7e75beb  <Person1Branch> -> <Person1Branch>
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % 

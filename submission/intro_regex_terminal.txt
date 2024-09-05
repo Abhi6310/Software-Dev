@@ -1,0 +1,58 @@
+Regex Terminal Output
+------------------------------------
+
+root@ca833798f116:/repository# grep -E "(^CSCI [0-9]{3}[13579])" course-catalog.txt        
+CSCI 2275 (4) Programming and Data Structures
+CSCI 2897 (3) Calculating Biological Quantities
+CSCI 3155 (4) Principles of Programming Languages
+CSCI 3287 (3) Design and Analysis of Database Systems
+CSCI 3403 (4) Introduction to CyberSecurity for a Converged World
+CSCI 3753 (4) Design and Analysis of Operating Systems
+CSCI 4113 (3) Linux System Administration
+CSCI 4133 (3) Fundamentals of Computer Security
+CSCI 4229 (3) Computer Graphics
+CSCI 4239 (3) Advanced Computer Graphics
+CSCI 4253 (3) Datacenter Scale Computing - Methods, Systems and Techniques
+CSCI 4273 (3) Network Systems
+CSCI 4303 (1) Cybersecurity Club Companion Course
+CSCI 4313 (3) Concurrent Programming
+CSCI 4413 (3) Computer Security and Ethical Hacking
+CSCI 4555 (3) Compiler Construction
+CSCI 4593 (3) Computer Organization
+CSCI 4753 (3) Computer Performance Modeling
+CSCI 4809 (3) Computer Animation
+CSCI 4831 (1-4) Special Topics in Algorithms
+CSCI 4849 (3) Input, Interaction, and Accessibility
+CSCI 4889 (3) Interactive Machine Learning for Customizable and Expressive Interfaces
+CSCI 5113 (3) Linux System Administration
+CSCI 5135 (3) Computer-Aided Verification
+CSCI 5229 (3) Computer Graphics
+CSCI 5239 (3) Advanced Computer Graphics
+CSCI 5253 (3) Datacenter Scale Computing - Methods, Systems and Techniques
+CSCI 5273 (3) Network Systems
+CSCI 5303 (1) Cybersecurity Club Companion Course
+CSCI 5313 (3) Concurrent Programming
+CSCI 5403 (3) Cybersecurity
+CSCI 5413 (3) Computer Security and Ethical Hacking
+CSCI 5417 (3) Information Retrieval Systems
+CSCI 5423 (3) Biologically-inspired Multi-Agent Systems
+CSCI 5525 (3) Compiler Construction
+CSCI 5535 (3) Fundamental Concepts of Programming Languages
+CSCI 5573 (3) Advanced Operating Systems
+CSCI 5593 (3) Advanced Computer Architecture
+CSCI 5673 (3) Distributed Systems
+CSCI 5753 (3) Computer Performance Modeling
+CSCI 5809 (3) Computer Animation
+CSCI 5817 (3) Database Systems
+CSCI 5839 (3) User-Centered Design and Development 1
+CSCI 5849 (3) Input, Interaction, and Accessibility
+CSCI 5919 (3) HCC Survey and Synthesis: Foundations and Trajectories
+CSCI 5929 (3) HCC Survey and Synthesis: New Disciplinary Directions
+CSCI 7123 (3) Topics in Operating Systems
+CSCI 7135 (1-3) Topics in Programming Languages
+CSCI 7143 (3) Topics in Computer Systems
+CSCI 7565 (3) Computational Phonology and Morphology
+CSCI 7717 (3) Topics in Database Systems
+root@ca833798f116:/repository# grep -E "(^CSCI [0-9]{3}[13579])" course-catalog.txt | wc -l
+51
+root@ca833798f116:/repository# 
