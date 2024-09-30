@@ -2,7 +2,7 @@
 
 |                                                Course Website                                                 |                                                   Canvas                                                    |                                              Piazza                                               |
 | :-----------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-| [![Course Website](https://img.shields.io/badge/Labs-Lab7-0A4D99)](https://cuboulder-csci3308.pages.dev/docs/labs/lab6) | [![Canvas](https://img.shields.io/badge/Canvas-CSCI3308-CFB87C)](https://canvas.colorado.edu/courses/110498) | [![Piazza](https://img.shields.io/badge/-Piazza-3e7aab)](https://piazza.com/class/m0agkuig4k6v4) |
+| [![Course Website](https://img.shields.io/badge/Labs-Lab6-0A4D99)](https://cuboulder-csci3308.pages.dev/docs/labs/lab6) | [![Canvas](https://img.shields.io/badge/Canvas-CSCI3308-CFB87C)](https://canvas.colorado.edu/courses/110498) | [![Piazza](https://img.shields.io/badge/-Piazza-3e7aab)](https://piazza.com/class/m0agkuig4k6v4) |
 
 ## Overview
 
