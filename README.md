@@ -1,8 +1,8 @@
-# CSCI 3308 Lab 7: NodeJS
+# CSCI 3308 Lab 6: NodeJS
 
 |                                                Course Website                                                 |                                                   Canvas                                                    |                                              Piazza                                               |
 | :-----------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-| [![Course Website](https://img.shields.io/badge/Labs-Lab7-0A4D99)](https://cuboulder-csci3308.pages.dev/docs/labs/lab7) | [![Canvas](https://img.shields.io/badge/Canvas-CSCI3308-CFB87C)](https://canvas.colorado.edu/courses/96969) | [![Piazza](https://img.shields.io/badge/-Piazza-3e7aab)](https://piazza.com/class/lll64nomt766ea) |
+| [![Course Website](https://img.shields.io/badge/Labs-Lab7-0A4D99)](https://cuboulder-csci3308.pages.dev/docs/labs/lab6) | [![Canvas](https://img.shields.io/badge/Canvas-CSCI3308-CFB87C)](https://canvas.colorado.edu/courses/110498) | [![Piazza](https://img.shields.io/badge/-Piazza-3e7aab)](https://piazza.com/class/m0agkuig4k6v4) |
 
 ## Overview
 
@@ -12,7 +12,7 @@ To receive credit for this lab, you MUST show your work to the TA during the lab
 
 For Example, If your lab is on this Friday 10 AM, the submission deadline will be next Friday 10 AM. There is no late policy for labs.
 
-Please follow the instructions on the [course website](https://cuboulder-csci3308.pages.dev/docs/labs/lab7). Note that the above badges serve as quick links to the lab instructions, Course Canvas, and Course Piazza.
+Please follow the instructions on the [course website](https://cuboulder-csci3308.pages.dev/docs/labs/lab6). Note that the above badges serve as quick links to the lab instructions, Course Canvas, and Course Piazza.
 
 
 Please refer to the lab instructions for more details.
@@ -27,6 +27,6 @@ In a terminal opened inside your repo:
 
 ```bash
 git add .
-git commit -m "Added lab7_nodejs collection along with lab7 files"
+git commit -m "Added lab6_nodejs collection along with lab6 files"
 git push
 ```
