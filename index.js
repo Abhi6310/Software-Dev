@@ -1,10 +1,41 @@
+// ----------------------------------   DEPENDENCIES  ----------------------------------------------
 const express = require('express');
 const app = express();
+const handlebars = require('express-handlebars');
+const path = require('path');
 const pgp = require('pg-promise')();
 const bodyParser = require('body-parser');
 const session = require('express-session');
 
-// db config
+// -------------------------------------  APP CONFIG   ----------------------------------------------
+
+// create `ExpressHandlebars` instance and configure the layouts and partials dir.
+const hbs = handlebars.create({
+  extname: 'hbs',
+  layoutsDir: __dirname + '/views/layouts',
+  partialsDir: __dirname + '/views/partials',
+});
+
+// Register `hbs` as our view engine using its bound `engine()` function.
+app.engine('hbs', hbs.engine);
+app.set('view engine', 'hbs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(bodyParser.json());
+// set Session
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    saveUninitialized: true,
+    resave: true,
+  })
+);
+app.use(
+  bodyParser.urlencoded({
+    extended: true,
+  })
+);
+
+// -------------------------------------  DB CONFIG AND CONNECT   ---------------------------------------
 const dbConfig = {
   host: 'db',
   port: 5432,
@@ -12,7 +43,6 @@ const dbConfig = {
   user: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
 };
-
 const db = pgp(dbConfig);
 
 // db test
@@ -23,28 +53,10 @@ db.connect()
     obj.done(); // success, release the connection;
   })
   .catch(error => {
-    console.log('ERROR:', error.message || error);
+    console.log('ERROR', error.message || error);
   });
 
-// set the view engine to ejs
-app.set('view engine', 'ejs');
-app.use(bodyParser.json());
-
-// set session
-app.use(
-  session({
-    secret: 'XASDASDA',
-    saveUninitialized: true,
-    resave: true,
-  })
-);
-
-app.use(
-  bodyParser.urlencoded({
-    extended: true,
-  })
-);
-
+// -------------------------------------  ROUTES for login.hbs   ----------------------------------------------
 const user = {
   student_id: undefined,
   username: undefined,
@@ -97,7 +109,7 @@ app.get('/login', (req, res) => {
 app.post('/login', (req, res) => {
   const email = req.body.email;
   const username = req.body.username;
-  const query = 'select * from students where students.email = $1';
+  const query = 'select * from students where students.email = $1 LIMIT 1';
   const values = [email];
 
   // get the student_id based on the emailid
@@ -133,6 +145,8 @@ const auth = (req, res, next) => {
 
 app.use(auth);
 
+// -------------------------------------  ROUTES for home.hbs   ----------------------------------------------
+
 app.get('/', (req, res) => {
   res.render('pages/home', {
     username: req.session.user.username,
@@ -145,13 +159,18 @@ app.get('/', (req, res) => {
   });
 });
 
+
+// -------------------------------------  ROUTES for courses.hbs   ----------------------------------------------
+
 app.get('/courses', (req, res) => {
   const taken = req.query.taken;
   // Query to list all the courses taken by a student
 
   db.any(taken ? student_courses : all_courses, [req.session.user.student_id])
     .then(courses => {
+      console.log(courses)
       res.render('pages/courses', {
+        email: user.email,
         courses,
         action: req.query.taken ? 'delete' : 'add',
       });
@@ -159,6 +178,7 @@ app.get('/courses', (req, res) => {
     .catch(err => {
       res.render('pages/courses', {
         courses: [],
+        email: user.email,
         error: true,
         message: err.message,
       });
@@ -210,12 +230,14 @@ app.post('/courses/add', (req, res) => {
     .then(courses => {
       //console.info(courses);
       res.render('pages/courses', {
+        email: user.email,
         courses,
         message: `Successfully added course ${req.body.course_id}`,
       });
     })
     .catch(err => {
       res.render('pages/courses', {
+        email: user.email,
         courses: [],
         error: true,
         message: err.message,
@@ -223,42 +245,14 @@ app.post('/courses/add', (req, res) => {
     });
 });
 
-app.post('/courses/delete', (req, res) => {
-  db.task('delete-course', task => {
-    return task.batch([
-      task.none(
-        `DELETE FROM
-            student_courses
-          WHERE
-            student_id = $1
-            AND course_id = '$2';`,
-        [req.session.user.student_id, parseInt(req.body.course_id)]
-      ),
-      // TODO(corypaik): Update with query from /courses.
-      task.any(student_courses, [req.session.user.student_id]),
-    ]);
-  })
-    .then(([, courses]) => {
-      console.info(courses);
-      res.render('pages/courses', {
-        courses,
-        message: `Successfully removed course ${req.body.course_id}`,
-        action: 'delete',
-      });
-    })
-    .catch(err => {
-      res.render('pages/courses', {
-        courses: [],
-        error: true,
-        message: err.message,
-      });
-    });
-});
+// -------------------------------------  ROUTES for logout.hbs   ----------------------------------------------
 
 app.get('/logout', (req, res) => {
   req.session.destroy();
   res.render('pages/logout');
 });
+
+// -------------------------------------  START THE SERVER   ----------------------------------------------
 
 app.listen(3000);
 console.log('Server is listening on port 3000');
