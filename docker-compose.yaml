@@ -10,7 +10,7 @@ services:
       - ./init_data:/docker-entrypoint-initdb.d
 
   web:
-    image: node:kts
+    image: node:lts
     user: 'node'
     env_file: .env
     working_dir: /home/node/app
