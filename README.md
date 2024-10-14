@@ -1,8 +1,10 @@
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=16513131&assignment_repo_type=AssignmentRepo)
+
 # CSCI 3308 Lab 8: Web Services
 
 |                                                Course Website                                                 |                                                   Canvas                                                    |                                              Piazza                                               |
 | :-----------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------: |
-| [![Course Website](https://img.shields.io/badge/Labs-Lab8-0A4D99)](https://cuboulder-csci3308.pages.dev/docs/labs/lab8) | [![Canvas](https://img.shields.io/badge/Canvas-CSCI3308-CFB87C)](https://canvas.colorado.edu/courses/96969) | [![Piazza](https://img.shields.io/badge/-Piazza-3e7aab)](https://piazza.com/class/lll64nomt766ea) |
+| [![Course Website](https://img.shields.io/badge/Labs-Lab8-0A4D99)](https://cuboulder-csci3308.pages.dev/docs/labs/lab8) | [![Canvas](https://img.shields.io/badge/Canvas-CSCI3308-CFB87C)](https://canvas.colorado.edu/courses/110498) | [![Piazza](https://img.shields.io/badge/-Piazza-3e7aab)](https://piazza.com/class/m0agkuig4k6v4) |
 
 ## Overview
 
