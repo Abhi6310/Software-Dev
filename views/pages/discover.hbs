@@ -1,0 +1,24 @@
+<h2>Discover Events</h2>
+
+<!-- Error message handle -->
+{{#if message}}
+  <div>{{message}}</div>
+{{/if}}
+
+<!-- Makes a container with a grid that displays each event -->
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;">
+  {{#each results}}
+    <!-- background for it -->
+    <div style="border: 1px solid #ddd; padding: 10px;">
+      <!-- shows the image hopefully-->
+      <img src="{{#if images}}{{images.[0].url}}{{else}}/path/to/default-image.jpg{{/if}}" alt="{{name}}" style="width: 100%; height: auto;">
+
+      <!-- adds the other event details -->
+      <h3>{{name}}</h3>
+      <p>{{date}} - {{time}}</p>
+
+      <!-- Booking link button -->
+      <a href="{{url}}" target="_blank">Book Now</a>
+    </div>
+  {{/each}}
+</div>
