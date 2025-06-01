@@ -1,0 +1,32 @@
+# ------------------------------------------------------------------------------
+# More resources related to this file:
+# [1] Overview   | https://docs.docker.com/compose/
+# [2] PostgreSQL | https://github.com/docker-library/docs/tree/master/postgres
+# [3] Node.js    | https://github.com/nodejs/docker-node/blob/master/README.md#how-to-use-this-image
+# -------------
+#  More resources for your projects:
+# [4] Samples    | https://github.com/docker/awesome-compose
+# [5] Env Vars   | https://docs.docker.com/compose/environment-variables/
+# [6] Secrets    | https://docs.docker.com/engine/swarm/secrets/#use-secrets-in-compose
+# ------------------------------------------------------------------------------
+
+services:
+  web:
+    image: node:lts
+    working_dir: /repository
+    depends_on:
+      - db
+    ports:
+      - '3000:4000'
+    volumes:
+      - ./:/repository
+    command:  'npm start'
+  db:
+    image: postgres:14
+    env_file: .env
+    expose:
+      - '5432'
+    volumes:
+      -  lab-01-db:/var/lib/postgresql/data
+volumes:
+  lab-01-db:

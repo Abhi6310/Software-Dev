@@ -1,0 +1,14 @@
+postgres=# CREATE DATABASE practicedb;
+ERROR:  database "practicedb" already exists
+postgres=# \c practicedb;
+You are now connected to database "practicedb" as user "postgres".
+practicedb=# SELECT * FROM store;
+ id | product_name | qty | price 
+----+--------------+-----+-------
+  1 | apple        |  10 |     1
+  2 | pear         |   5 |     2
+  3 | banana       |  10 |   1.5
+  4 | lemon        | 100 |   0.1
+  5 | orange       |  50 |   0.2
+(5 rows)
+
