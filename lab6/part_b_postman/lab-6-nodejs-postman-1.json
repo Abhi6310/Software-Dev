@@ -1,0 +1,218 @@
+{
+	"info": {
+		"_postman_id": "7dc2d334-ea85-466a-a72e-5a908b4e47d3",
+		"name": "Lab-6-NodeJS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38778893"
+	},
+	"item": [
+		{
+			"name": "http://localhost:3000/",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Harwilll\",\n    \"username\": \"hhawksley0\",\n    \"email\": \"hsiemianowicz0@blogspot.com\",\n    \"city\": \"Eskilstuna\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/getUserInfo/?username=hhawksley0&city=Eskilstuna",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/getUserInfo/?username=hhawksley0&city=Eskilstuna",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"getUserInfo",
+						""
+					],
+					"query": [
+						{
+							"key": "username",
+							"value": "hhawksley0"
+						},
+						{
+							"key": "city",
+							"value": "Eskilstuna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/add_user/?name=Harwilll&username=hhawksley0&email=hsiemianowicz0@blogspot.com&city=Eskilstuna",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Jdoe\",\n    \"username\": \"Jdoe\",\n    \"email\": \"Jdoe@gmail..com\",\n    \"city\": \"Jdoe\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/add_user/?name=Jdoe&username=Jdoe&email=Jdoe@gmail.com&city=Jdoe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"add_user",
+						""
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Jdoe"
+						},
+						{
+							"key": "username",
+							"value": "Jdoe"
+						},
+						{
+							"key": "email",
+							"value": "Jdoe@gmail.com"
+						},
+						{
+							"key": "city",
+							"value": "Jdoe"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/update_user?name=Harwilll&username=hhawksley0&email=hsiemianowicz0@blogspot.com&city=Eskilstuna",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Harwilll\",\n    \"username\": \"hhawksley0\",\n    \"email\": \"hsiemianowicz0@blogspot.com\",\n    \"city\": \"Eskilstuna\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/update_user?name=Harwilll&username=hhawksley0&email=hsiemianowicz0@blogspot.com&city=Eskilstuna",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"update_user"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "Harwilll"
+						},
+						{
+							"key": "username",
+							"value": "hhawksley0"
+						},
+						{
+							"key": "email",
+							"value": "hsiemianowicz0@blogspot.com"
+						},
+						{
+							"key": "city",
+							"value": "Eskilstuna"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:3000/delete_user/:username=hhawksley0",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"hhawksley0\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/delete_user/:username=hhawksley0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"delete_user",
+						":username=hhawksley0"
+					],
+					"variable": [
+						{
+							"key": "username=hhawksley0",
+							"value": ""
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
