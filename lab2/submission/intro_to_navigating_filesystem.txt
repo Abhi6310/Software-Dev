@@ -1,0 +1,49 @@
+Terminal Output
+---------------------
+abhinavchalise@Abhis-Air-2 lab-2-git-shell-regex-Abhi6310 % docker-compose run devel
+[+] Creating 1/0
+ ✔ Network lab-2-git-shell-regex-abhi6310_default  Created                                                                                             0.0s 
+root@ca833798f116:/repository# pwd
+/repository
+root@ca833798f116:/repository# ls
+README.md  Submissions  course-catalog.txt  docker-compose.yaml  main.cpp
+root@ca833798f116:/repository# echo $PWD
+/repository
+root@ca833798f116:/repository# touch tmp.sh
+root@ca833798f116:/repository# apt-get update && apt-get install vim
+Get:1 http://ports.ubuntu.com/ubuntu-ports focal InRelease [265 kB]
+
+
+-
+Installed a bunch of stuff
+-
+
+
+update-alternatives: warning: skip creation of /usr/share/man/man1/editor.1.gz because associated file /usr/share/man/man1/vim.1.gz (of link group editor) doesn't exist
+Processing triggers for libc-bin (2.31-0ubuntu9.16) ...
+root@ca833798f116:/repository# vim tmp.sh
+root@ca833798f116:/repository# ./tmp.sh
+bash: ./tmp.sh: Permission denied
+root@ca833798f116:/repository# ls -1
+README.md
+Submissions
+course-catalog.txt
+docker-compose.yaml
+main.cpp
+tmp.sh
+root@ca833798f116:/repository# chmod +x tmp.sh
+root@ca833798f116:/repository# ls -1
+README.md
+Submissions
+course-catalog.txt
+docker-compose.yaml
+main.cpp
+tmp.sh
+root@ca833798f116:/repository# ./tmp.sh
+
+root@ca833798f116:/repository# cat tmp.sh
+echo $Home
+root@ca833798f116:/repository# rm tmp.sh
+root@ca833798f116:/repository# ls 
+README.md  Submissions  course-catalog.txt  docker-compose.yaml  main.cpp
+root@ca833798f116:/repository# 
