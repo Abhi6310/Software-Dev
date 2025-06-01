@@ -1,0 +1,212 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Calendar</title>
+    <!-- @TODO: Include all external resources - Bootstrap libraries, script.js and style.css -->
+  <!-- Bootstrap CSS library -->
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+crossorigin="anonymous"
+/>
+<!-- Bootstrap JS library -->
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+  crossorigin="anonymous"
+></script>
+<!-- Bootstrap icons library -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+/>
+<!-- Replace file.js with the appropriate path to script.js. Please use relative paths -->
+<script src="resources\js\script.js"></script>
+<!-- Replace file.css with the appropriate path to style.css. Please use relative paths -->
+<link rel="stylesheet" href="resources/css/style.css" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </head>
+  <body>
+    <!-- Calendar elements -->
+    <body onload="initializeCalendar()"></body>
+    <div class="container">
+      <!-- You may choose another container class of your liking -->
+      <!-- All elements of the webpage will be added within this div -->
+      <div id="calendar" class="row"></div>
+    </div>
+
+
+    <!-- Modal elements -->
+<div
+class="modal fade"
+id="event-modal"
+tabindex="-1"
+aria-labelledby="eventModalLabel"
+aria-hidden="true"
+>
+<div class="modal-dialog">
+  <div class="modal-content">
+    <!-- Modal header -->
+    <div class="modal-header">
+      <h5 class="modal-title" id="eventModalLabel">Add Event</h5>
+      <button
+        type="button"
+        class="btn-close"
+        data-bs-dismiss="modal"
+        aria-label="Close"
+      ></button>
+    </div>
+    <!-- Modal body -->
+    <div class="modal-body">
+      <!-- Form  -->
+      <div class="modal-body">
+        <form id="event-form">
+          <!-- Event Name -->
+          <div class="mb-3">
+            <label for="event_name" class="form-label">Event Name</label>
+            <input
+              type="text"
+              class="form-control"
+              id="event_name"
+              placeholder="Enter event name"
+              required
+            />
+          </div>
+     
+          <!-- Weekday -->
+          <div class="mb-3">
+            <label for="event_weekday" class="form-label">Weekday</label>
+            <select class="form-select" id="event_weekday" required>
+              <option value="">Select a day</option>
+              <option value="monday">Monday</option>
+              <option value="tuesday">Tuesday</option>
+              <option value="wednesday">Wednesday</option>
+              <option value="thursday">Thursday</option>
+              <option value="friday">Friday</option>
+              <option value="saturday">Saturday</option>
+              <option value="sunday">Sunday</option>
+            </select>
+          </div>
+     
+          <!-- Time -->
+          <div class="mb-3">
+            <label for="event_time" class="form-label">Time</label>
+            <input
+              type="time"
+              class="form-control"
+              id="event_time"
+              required
+            />
+          </div>
+     
+          <!-- Event Modality -->
+          <div class="mb-3">
+            <label for="event_modality" class="form-label">Event Modality</label>
+            <select
+              class="form-select"
+              id="event_modality"
+              required
+              onchange="updateLocationOptions(this.value)"
+            >
+              <option value="">Select modality</option>
+              <option value="in-person">In Person</option>
+              <option value="remote">Remote</option>
+            </select>
+          </div>
+     
+          <!-- Location (Shown when In-Person is selected) -->
+          <div class="mb-3 modality-option" id="location-field" style="display: none;">
+            <label for="event_location" class="form-label">Location</label>
+            <input
+              type="text"
+              class="form-control"
+              id="event_location"
+              placeholder="Enter event location"
+            />
+          </div>
+     
+          <!-- Remote URL (Shown when Remote is selected) -->
+          <div class="mb-3 modality-option" id="remote-url-field" style="display: none;">
+            <label for="event_remote_url" class="form-label">Remote URL</label>
+              <input
+                type="url"
+                class="form-control"
+                id="event_remote_url"
+                placeholder="Enter meeting URL (e.g., Zoom, Teams)"
+                pattern="https?://.+"
+                required
+              />
+            </div>
+
+
+     
+          <!-- Attendees (Shown for both modalities) -->
+          <div class="mb-3" id="attendees-field" style="display: none;">
+            <label for="event_attendees" class="form-label">Attendees</label>
+            <input
+              type="text"
+              class="form-control"
+              id="event_attendees"
+              placeholder="Enter attendee names, separated by commas"
+            />
+          </div>
+      </div>
+     
+    </div>
+    <!-- Modal Footer Buttons -->
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        data-bs-dismiss="modal"
+      >
+        Close
+      </button>
+      <button
+        id="submit_button"
+        class="btn btn-primary"
+        type="submit"
+      >
+        Create Event
+      </button>
+    </div>
+  </form>
+  </div>
+</div>
+</div>
+  </body>
+</html>
