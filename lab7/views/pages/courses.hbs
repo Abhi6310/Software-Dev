@@ -1,0 +1,40 @@
+<div class="Courses">
+  <h2 class="text-center">Courses</h2>
+  
+  <!-- show message with the handlebar-->
+  {{> message }}
+  <!-- Basic Structure of courses-->
+  <table class="Courses, if this loads it worked">
+    <thead>
+      <tr>
+        <th>Course ID</th>
+        <th>Course Name</th>
+        <th>Credit Hours</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loops through each course-->
+      {{#each courses}}
+      <tr>
+        <td>{{course_id}}</td>
+        <td>{{course_name}}</td>
+        <td>{{credit_hours}}</td>
+        <td>
+          <!-- Form that adds the course -->
+          <form action="/courses/add" method="POST">
+            <!-- Passing in course ID -->
+            <input type="hidden" name="course_id" value="{{course_id}}">
+            <!-- Shows either add button or taken based on the conditional-->
+            {{#if taken}}
+              <button type="submit" class="btn btn-secondary" disabled>Already Taken</button>
+            {{else}}
+              <button type="submit" class="btn btn-primary">Add</button>
+            {{/if}}
+          </form>
+        </td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</div>
